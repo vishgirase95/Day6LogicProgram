@@ -1,58 +1,83 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ConsoleApp1
 {
     class Program
     {
+      public static int Number = Convert.ToInt32(Console.ReadLine());
+     
+       public static  List<int> Divisor = new List<int>();
+        public static int sum=0;
+
+        public static void AddList()
+        {
+
+
+            for (int i = 1; i < Number; i++)
+            {
+
+                if (Number % i == 0)
+                {
+                    Divisor.Add(i);
+                   
+                }
+            }
+        }
+
+        //public static void PrintDivisor()
+        //{
+        //    for (int n = 0; n < Divisor.Count; n++)
+        //    {
+        //        Console.WriteLine(Divisor[n]);
+        //    }
+
+        //}
+
+        public static void addDivisor()
+        {
+            for (int m = 0; m < Divisor.Count; m++)
+            {
+                sum = Divisor[m] + sum;
+
+                   
+            }
+            
+        }
+
+        public static void Compare()
+        {
+            if (sum == Number)
+            {
+                Console.WriteLine($"{Number} is the Perfect Number");
+
+            }
+            else
+            {
+                Console.WriteLine($"{Number} is the not  Perfect Number");
+
+            }
+        }
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter the number");
+            Console.WriteLine("Enter the number to check if its Perfect:");
 
+            AddList();
+            //PrintDivisor();
+            addDivisor();
+            Compare();
+           
 
-          
            
            
-            int  UserInput = Convert.ToInt32(Console.ReadLine());
-            int i;
-            int[] series = new int[UserInput + 1];
-            series[0] = 0;
-            series[1] = 1;
-
-            switch (UserInput)
-            {
-                case 1:
-                    Console.WriteLine(series[0]);
-                    break;
-
-                case 2:
-                    Console.WriteLine(series[0]);
-
-                    Console.WriteLine(series[1]);
-                    break;
-
-
-                default:
-                    Console.WriteLine(series[0]);
-                    Console.WriteLine(series[1]);
-
-
-                    for (i = 2; i < UserInput; i++)
-
-                    {
-
-
-                        series[i] = series[i - 1] + series[i - 2];
 
 
 
-                        Console.WriteLine(series[i]);
-                    }
-                    break;
-            }
 
 
 
-          
-          }
+
+        }
     }
 }
