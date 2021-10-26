@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading;
 
 namespace ConsoleApp1
 {
@@ -8,18 +10,27 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            int Reverse = 0;
-            Console.WriteLine("Enter the number to be reverse:");
-            int Number = Convert.ToInt32(Console.ReadLine());
 
-            while(Number>0)
+            int count = 0;
+            Console.WriteLine("Enter the zero to start timmer and then press any key to stop");
+
+            int input = Convert.ToInt32(Console.ReadLine());
+
+            if (input == 0)
             {
-                int LastDigit = Number % 10;
-                Reverse = (Reverse * 10) + LastDigit;
-                Number = Number / 10;
-            }
-            Console.WriteLine(Reverse);
 
+                while (!Console.KeyAvailable)
+                {
+                    count++;
+                    
+
+
+
+                }
+
+            }
+            int sec = count / 1000;
+            Console.WriteLine($"{sec} mili sec");
 
 
 
